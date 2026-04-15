@@ -1,0 +1,9 @@
+.ind-section { background: var(--section-alt); }
+.ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ind-card { padding: 36px 28px; text-align: center; }
+.ind-icon { font-size: 44px; display: block; margin-bottom: 16px; transition: transform 0.3s; }
+.ind-card:hover .ind-icon { transform: scale(1.15) rotate(-5deg); }
+.ind-card h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 10px; }
+.ind-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+@media (max-width: 900px) { .ind-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .ind-grid { grid-template-columns: 1fr; } }

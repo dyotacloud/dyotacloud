@@ -1,0 +1,99 @@
+.trustbar {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0 24px;
+  overflow: hidden;
+}
+
+.trustbar-heading {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.tb-row {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 12px;
+}
+.tb-row:last-child { margin-bottom: 0; }
+
+.tb-row::before,
+.tb-row::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.tb-row::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.tb-row::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+
+.tb-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+.tb-track:hover { animation-play-state: paused; }
+
+.tb-ltr { animation: tbScrollLTR 30s linear infinite; }
+.tb-rtl { animation: tbScrollRTL 30s linear infinite; }
+
+@keyframes tbScrollLTR {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes tbScrollRTL {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.tb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 28px;
+  border-right: 1px solid var(--border);
+  min-width: 130px;
+  opacity: 0.45;
+  filter: grayscale(1);
+  transition: opacity 0.3s, filter 0.3s;
+  cursor: default;
+}
+.tb-item:hover { opacity: 1; filter: grayscale(0); }
+
+.tb-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+.tb-label {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trustbar { padding: 20px 0 16px; }
+  .trustbar-heading { font-size: 10px; letter-spacing: 2px; margin-bottom: 14px; }
+  .tb-item { padding: 6px 20px; min-width: 110px; }
+  .tb-name { font-size: 12px; }
+  .tb-label { font-size: 9px; }
+  .tb-row::before, .tb-row::after { width: 40px; }
+}
+
+@media (max-width: 480px) {
+  .tb-item { padding: 6px 16px; min-width: 95px; }
+  .tb-name { font-size: 11px; }
+}
