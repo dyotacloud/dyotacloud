@@ -1,0 +1,92 @@
+.testi-section { background: var(--bg); overflow: hidden; }
+
+.testi-top { text-align: center; margin-bottom: 52px; }
+.testi-top .section-title { margin-bottom: 12px; }
+.testi-top .section-sub { margin: 0 auto; }
+
+/* Slider rows */
+.testi-row-wrap {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 24px;
+  cursor: grab;
+}
+.testi-row-wrap:last-child { margin-bottom: 0; }
+
+/* fade edges */
+.testi-row-wrap::before,
+.testi-row-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.testi-row-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.testi-row-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg), transparent); }
+
+.testi-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 8px 0;
+}
+
+.testi-ltr { animation: testiScrollLTR 35s linear infinite; }
+.testi-rtl { animation: testiScrollRTL 35s linear infinite; }
+
+@keyframes testiScrollLTR {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes testiScrollRTL {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Card */
+.testi-card {
+  padding: 28px;
+  position: relative;
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.testi-quote {
+  position: absolute; top: 10px; right: 18px;
+  font-size: 80px; color: #e0f2fe;
+  font-family: Georgia, serif; line-height: 1;
+  pointer-events: none; font-weight: 900;
+}
+[data-theme="dark"] .testi-quote { color: rgba(0,161,224,0.08); }
+
+.testi-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+
+.testi-text {
+  font-size: 14px; color: var(--text-secondary);
+  line-height: 1.8; margin-bottom: 20px;
+  display: -webkit-box; -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.testi-author {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 16px; border-top: 1px solid var(--card-border);
+}
+.testi-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  object-fit: cover; border: 2px solid #d0eefa; flex-shrink: 0;
+}
+.testi-author strong { display: block; font-size: 13px; color: var(--text-primary); font-weight: 700; margin-bottom: 2px; }
+.testi-author span { font-size: 11px; color: var(--text-muted); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testi-card { width: 280px; padding: 20px; }
+  .testi-row-wrap::before, .testi-row-wrap::after { width: 60px; }
+}
+@media (max-width: 480px) {
+  .testi-card { width: 240px; padding: 16px; }
+  .testi-text { font-size: 13px; }
+}

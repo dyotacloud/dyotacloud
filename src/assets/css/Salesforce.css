@@ -1,0 +1,225 @@
+.sf-section {
+  background: var(--section-alt);
+  position: relative;
+  overflow: hidden;
+}
+.sf-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 90% 10%, rgba(0,161,224,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(21,137,238,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Partner badges */
+.sf-partner-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+.sf-partner-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-xlight);
+  border: 1.5px solid var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 10px;
+  transition: all 0.25s;
+  cursor: default;
+}
+.sf-partner-badge:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+}
+[data-theme="dark"] .sf-partner-badge {
+  background: rgba(0,161,224,0.1);
+  border-color: rgba(0,161,224,0.25);
+  color: #7dd3fc;
+}
+.sf-badge-cloud { font-size: 16px; }
+
+/* Services section header */
+.sf-services-header {
+  margin-bottom: 28px;
+}
+.sf-services-header h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.sf-services-header p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Services card grid — 3 columns */
+.sf-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 1;
+}
+
+.sf-svc-card {
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.sf-svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00A1E0, #1589EE);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s;
+}
+.sf-svc-card:hover::before { transform: scaleX(1); }
+
+.sf-svc-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 16px;
+  transition: transform 0.3s;
+}
+.sf-svc-card:hover .sf-svc-icon { transform: scale(1.1); }
+
+.sf-svc-card h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.sf-svc-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.sf-svc-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sf-svc-feature {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Clouds */
+.sf-clouds-wrap {
+  margin-bottom: 64px;
+}
+.sf-clouds-header {
+  margin-bottom: 28px;
+}
+.sf-clouds-header h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.sf-clouds-header p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.sf-clouds-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.sf-cloud-card {
+  padding: 24px 18px;
+  text-align: center;
+}
+.sf-cloud-icon {
+  font-size: 34px;
+  display: block;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+.sf-cloud-card:hover .sf-cloud-icon { transform: scale(1.12); }
+.sf-cloud-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.sf-cloud-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.sf-cloud-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  transition: gap 0.2s;
+}
+.sf-cloud-card:hover .sf-cloud-link { gap: 8px; }
+
+/* Benefits strip */
+.sf-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background: linear-gradient(135deg, #032D60, #0070D2);
+  border-radius: 20px;
+  padding: 44px 40px;
+  box-shadow: 0 16px 48px rgba(0,112,210,0.25);
+}
+.sf-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.sf-benefit-icon {
+  font-size: 30px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.sf-benefit h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.sf-benefit p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .sf-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .sf-clouds-grid { grid-template-columns: repeat(3, 1fr); }
+  .sf-benefits { grid-template-columns: 1fr; padding: 32px 24px; }
+}
+@media (max-width: 600px) {
+  .sf-services-grid { grid-template-columns: 1fr; }
+  .sf-clouds-grid { grid-template-columns: repeat(2, 1fr); }
+}

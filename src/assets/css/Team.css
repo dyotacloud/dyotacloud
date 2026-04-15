@@ -1,0 +1,35 @@
+.team-section { background: var(--section-alt); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.team-card { overflow: hidden; }
+.team-img-wrap { position: relative; overflow: hidden; }
+.team-img { width: 100%; height: 240px; object-fit: cover; display: block; filter: grayscale(10%); transition: all 0.5s; }
+.team-card:hover .team-img { filter: grayscale(0%); transform: scale(1.04); }
+.team-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,112,210,0.9) 0%, transparent 60%);
+  display: flex; align-items: flex-end; padding: 16px; gap: 8px;
+  opacity: 0; transition: opacity 0.3s;
+}
+.team-card:hover .team-overlay { opacity: 1; }
+.team-overlay a {
+  width: 32px; height: 32px; background: rgba(255,255,255,0.2);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  color: #fff; transition: background 0.2s;
+}
+.team-overlay a:hover { background: rgba(255,255,255,0.35); }
+.team-info { padding: 18px 20px; }
+.team-info h4 { font-size: 16px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+.team-role { font-size: 13px; color: #00A1E0; font-weight: 600; margin-bottom: 5px; }
+.team-cert { font-size: 11px; color: var(--text-muted); }
+.team-skeleton {
+  height: 310px; border-radius: 16px; background: var(--bg3); border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.team-skeleton::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(22,163,74,0.06), transparent);
+  animation: shimmer 1.8s infinite;
+}
+@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
