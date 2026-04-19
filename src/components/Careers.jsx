@@ -79,7 +79,7 @@ export default function Careers() {
           <p>Fill in the form and our HR team will reach out within 48 hours.</p>
           {sent ? (
             <div className="apply-success">
-              <span>✅</span>
+              <span></span>
               <div><strong>Application Received!</strong><p>We'll review your profile and get back to you soon.</p></div>
             </div>
           ) : (

@@ -18,7 +18,7 @@ function CaseCard({ c, delay }) {
           {c.tech.map(t => <span key={t} className="case-tech-tag">{t}</span>)}
         </div>
         <div className="case-result" style={{ color: c.color }}>
-          <span>📈</span> {c.result}
+          <span></span> {c.result}
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default function CaseStudies() {
     <section id="portfolio" className="cases-section">
       <div className="container">
         <div className="section-header reveal" ref={titleRef}>
-          <span className="section-tag">📁 Portfolio</span>
+          <span className="section-tag"> Portfolio</span>
           <h2 className="section-title">Real Results for <span className="gradient-text">Real Businesses</span></h2>
           <p className="section-sub">Explore how we've helped companies achieve measurable outcomes with Salesforce and cloud technology.</p>
         </div>

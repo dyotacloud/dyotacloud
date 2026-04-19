@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from './SEO'
 import { itServices } from '../data/data'
 import useReveal from '../hooks/useReveal'
 import { Icon } from '../utils/iconMap'
@@ -25,6 +26,12 @@ export default function Services() {
   const titleRef = useReveal()
   return (
     <section id="services" className="services-section">
+      <SEO 
+        title="Salesforce & IT Services | LWC, Apex, CRM Solutions | Dyota Cloud"
+        description="Dyota Cloud offers comprehensive Salesforce services including LWC development, Apex programming, CRM implementation, and full-stack technology solutions."
+        keywords="Salesforce services, LWC development, Apex development, CRM implementation, IT services, cloud solutions, Salesforce consulting"
+        url="https://www.dyotacloud.com/#services"
+      />
       <div className="container">
         <div className="section-header reveal" ref={titleRef}>
           <span className="section-tag"><Icon name="FaCode" size={13} /> IT Services</span>

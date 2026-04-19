@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
 import { FaEnvelope, FaCheckCircle } from 'react-icons/fa'
+import SEO from './SEO'
 import useReveal from '../hooks/useReveal'
 import content from '../data/siteContent.json'
 import '../assets/css/Contact.css'
@@ -28,6 +29,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section">
+      <SEO 
+        title="Contact Dyota Cloud | Salesforce & IT Solutions Consultation"
+        description="Get in touch with Dyota Cloud for Salesforce implementation, LWC development, and IT solutions. Book a free consultation with our experts."
+        keywords="Contact Dyota Cloud, Salesforce consultation, IT services contact, CRM implementation, cloud solutions"
+        url="https://www.dyotacloud.com/#contact"
+      />
       <div className="contact-bg" />
       <div className="container contact-inner">
         <div className="contact-info reveal" ref={leftRef}>

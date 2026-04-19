@@ -69,8 +69,20 @@
 
 .theme-btn:hover { background: var(--green); border-color: var(--green); color: #fff; }
 
-.submit-btn { color: #fff !important; }
-.navbar.scrolled .submit-btn { color: #fff !important; }
+.submit-btn { 
+  color: #fff !important;
+  height: 34px;
+  padding: 0 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.navbar.scrolled .submit-btn { 
+  color: #fff !important;
+  height: 34px;
+}
 
 .nav-cta {
   padding: 9px 18px; font-size: 13.5px; border-radius: 9px;
@@ -143,10 +155,11 @@
 @media (max-width: 960px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .nav-cta { display: none !important; }
+  .submit-btn { display: none !important; }
 }
 @media (max-width: 480px) {
   .nav-inner { gap: 8px; }
   .nav-actions { gap: 6px; }
   .nav-logo span { font-size: 16px; }
+  .submit-btn { display: none !important; }
 }

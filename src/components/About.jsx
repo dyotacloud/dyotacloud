@@ -1,5 +1,6 @@
 import React from 'react'
 import { CheckCircle, ArrowRight } from 'lucide-react'
+import SEO from './SEO'
 import useReveal from '../hooks/useReveal'
 import content from '../data/siteContent.json'
 import { Icon } from '../utils/iconMap'
@@ -13,6 +14,12 @@ export default function About() {
 
   return (
     <section id="about" className="about-section">
+      <SEO 
+        title="About Dyota Cloud | Salesforce Partner & IT Solutions Company"
+        description="Learn about Dyota Cloud - a leading Salesforce partner in India with expertise in LWC, Apex, CRM solutions, and digital transformation services."
+        keywords="About Dyota Cloud, Salesforce partner, IT company India, CRM solutions, digital transformation, cloud services"
+        url="https://www.dyotacloud.com/#about"
+      />
       <div className="about-bg" />
       <div className="container about-inner">
         <div className="about-left reveal" ref={leftRef}>
