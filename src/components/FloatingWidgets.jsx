@@ -11,7 +11,7 @@ const getAIResponse = (msg) => {
   if (m.match(/price|cost|pricing|budget|charge/))
     return "Our pricing depends on project scope. For a custom quote, please share your requirements at contact@dyotacloud.com or book a free consultation. 💼"
   if (m.match(/salesforce|crm|sales cloud|service cloud|marketing cloud/))
-    return "We're an official Salesforce Consulting Partner with 5+ years of experience. We handle implementation, customization, Apex/LWC development, and migrations. Want to schedule a call? 🚀"
+    return "We're an official Salesforce Consulting Partner with 5+ years of experience. We handle implementation, customization, Apex/LWC development, and migrations. Want to schedule a call? "
   if (m.match(/aws|azure|cloud|devops|kubernetes|docker/))
     return "We offer full-stack cloud services on AWS, Azure & GCP — including architecture, migration, CI/CD pipelines, and managed services. Tell me more about your project! ☁️"
   if (m.match(/mobile|app|react native|flutter|android|ios/))
@@ -19,7 +19,7 @@ const getAIResponse = (msg) => {
   if (m.match(/ai|ml|machine learning|artificial intelligence|einstein/))
     return "Our AI/ML team works on predictive analytics, NLP, computer vision, and Salesforce Einstein integrations. What problem are you trying to solve? 🤖"
   if (m.match(/career|job|hiring|vacancy|apply|work/))
-    return "We're always looking for talented people! Check our Careers section on this page or send your resume to careers@dyotacloud.com. 🎯"
+    return "We're always looking for talented people! Check our Careers section on this page or send your resume to careers@dyotacloud.com. "
   if (m.match(/contact|email|phone|reach|talk|call/))
     return `You can reach us at contact@dyotacloud.com or call ${company.phone}. Or just book a free consultation using the button above! 📞`
   if (m.match(/hello|hi|hey|hii|namaste/))
@@ -158,7 +158,7 @@ export default function FloatingWidgets() {
 
           {feedbackDone ? (
             <div className="feedback-done">
-              <span>🎉</span>
+              <span></span>
               <strong>Thank you!</strong>
               <p>Your feedback helps us improve.</p>
             </div>

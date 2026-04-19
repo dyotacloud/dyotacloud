@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { ArrowRight, Play, CheckCircle, Award, Users, Briefcase } from 'lucide-react'
+import SEO from './SEO'
 import content from '../data/siteContent.json'
 import '../assets/css/Hero.css'
 
@@ -43,6 +44,12 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
+      <SEO 
+        title="Salesforce Development Company in India | Dyota Cloud"
+        description="Dyota Cloud is a leading Salesforce partner in India. We provide LWC development, Apex development, CRM solutions, and cloud transformation services."
+        keywords="Salesforce development, LWC development, Apex development, CRM solutions, Salesforce partner India, cloud services"
+        url="https://www.dyotacloud.com/"
+      />
       <canvas ref={canvasRef} className="hero-canvas" />
       <div className="hero-bg" />
       <div className="hero-grid" />

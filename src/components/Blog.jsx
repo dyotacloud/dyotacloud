@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Calendar, Clock, ArrowUpRight } from 'lucide-react'
+import SEO from './SEO'
 import useReveal from '../hooks/useReveal'
 import '../assets/css/Blog.css'
 
@@ -18,6 +19,12 @@ export default function Blog() {
 
   return (
     <section id="blog" className="blog-section">
+      <SEO 
+        title="Blog | Salesforce, DevOps & Cloud Insights | Dyota Cloud"
+        description="Read latest articles on Salesforce development, LWC, Apex, DevOps, cloud solutions, and AI/ML from Dyota Cloud experts."
+        keywords="Salesforce blog, LWC development, Apex programming, DevOps, cloud solutions, AI/ML, technology insights"
+        url="https://www.dyotacloud.com/#blog"
+      />
       <div className="container">
         <div className="blog-header reveal" ref={titleRef}>
           <div>

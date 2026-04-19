@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Sun, Moon } from 'lucide-react'
-import { useTheme } from '../context/ThemeContext'
 import content from '../data/siteContent.json'
 import '../assets/css/Navbar.css'
 
@@ -9,13 +8,30 @@ const { navbar, company } = content
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const { dark, toggle } = useTheme()
+  const [dark, setDark] = useState(() => {
+    // Check localStorage for saved preference
+    const saved = localStorage.getItem('theme')
+    return saved ? saved === 'dark' : false
+  })
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
   }, [])
+
+  useEffect(() => {
+    // Apply theme to document
+    if (dark) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [dark])
+
+  const toggle = () => setDark(!dark)
 
   return (
     <>
