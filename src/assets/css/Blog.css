@@ -1,4 +1,4 @@
-.blog-section { background: var(--bg); }
+.blog-section { background: var(--section-alt); }
 .blog-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; gap: 24px; }
 .blog-header .section-title { margin-bottom: 0; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

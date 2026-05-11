@@ -1,4 +1,4 @@
-.testi-section { background: var(--bg); overflow: hidden; }
+.testi-section { background: var(--section-alt); overflow: hidden; }
 
 .testi-top { text-align: center; margin-bottom: 52px; }
 .testi-top .section-title { margin-bottom: 12px; }

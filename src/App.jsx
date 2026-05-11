@@ -1,28 +1,42 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import SEO from './components/SEO'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import About from './components/About'
-import Salesforce from './components/Salesforce'
+// import Salesforce from './components/Salesforce'   // COMMENTED — see HIDDEN_SECTIONS.txt
 import Services from './components/Services'
-import Industries from './components/Industries'
+// import Industries from './components/Industries'   // COMMENTED — see HIDDEN_SECTIONS.txt
+import Projects from './components/Projects'
 import WhyUs from './components/WhyUs'
-import CaseStudies from './components/CaseStudies'
+// import CaseStudies from './components/CaseStudies' // COMMENTED — see HIDDEN_SECTIONS.txt
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
 import Blog from './components/Blog'
-import Careers from './components/Careers'
+// import Careers from './components/Careers'  // COMMENTED — see HIDDEN_SECTIONS.txt
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import TrustBar from './components/TrustBar'
 import ClienteleBar from './components/ClienteleBar'
 import FloatingWidgets from './components/FloatingWidgets'
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://www.dyotacloud.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About',    item: 'https://www.dyotacloud.com/#about' },
+    { '@type': 'ListItem', position: 3, name: 'Services', item: 'https://www.dyotacloud.com/#services' },
+    { '@type': 'ListItem', position: 4, name: 'Projects', item: 'https://www.dyotacloud.com/#projects' },
+    { '@type': 'ListItem', position: 5, name: 'Blog',     item: 'https://www.dyotacloud.com/#blog' },
+    { '@type': 'ListItem', position: 6, name: 'Careers',  item: 'https://www.dyotacloud.com/#careers' },
+    { '@type': 'ListItem', position: 7, name: 'Contact',  item: 'https://www.dyotacloud.com/#contact' },
+  ],
+}
+
 export default function App() {
   useEffect(() => {
-    // Initialize theme from localStorage or system preference
     const saved = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     const theme = saved || (prefersDark ? 'dark' : 'light')
@@ -31,7 +45,7 @@ export default function App() {
 
   return (
     <>
-      <SEO />
+      <SEO structuredData={breadcrumbSchema} />
       <Loader />
       <Navbar />
       <main>
@@ -39,18 +53,23 @@ export default function App() {
         <TrustBar />
         <Stats />
         <About />
-        <Salesforce />
+
+        {/* <Salesforce /> */}
+
         <Services />
-        <Industries />
+
+        {/* <Industries /> */}
+
+        <Projects />
         <WhyUs />
-        <CaseStudies />
+
+        {/* <CaseStudies /> */}
+
         <ClienteleBar />
         <Testimonials />
-        {/* If you want disply meet out team section then uncomment this line */}
         <Team />
         <Blog />
-        {/* If you want display Careers job section */}
-        <Careers />
+        {/* <Careers /> */}
         <Contact />
       </main>
       <Footer />

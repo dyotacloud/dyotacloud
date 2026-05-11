@@ -1,14 +1,40 @@
+# ── Dyota Cloud robots.txt ──
+# https://www.dyotacloud.com
+
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
-
-Sitemap: https://www.dyotacloud.com/sitemap.xml
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Crawl-delay: 1
 
 # Google
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
 Allow: /
 
 # Bing
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://www.dyotacloud.com/sitemap.xml

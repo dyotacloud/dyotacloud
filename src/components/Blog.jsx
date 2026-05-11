@@ -20,9 +20,9 @@ export default function Blog() {
   return (
     <section id="blog" className="blog-section">
       <SEO 
-        title="Blog | Salesforce, DevOps & Cloud Insights | Dyota Cloud"
-        description="Read latest articles on Salesforce development, LWC, Apex, DevOps, cloud solutions, and AI/ML from Dyota Cloud experts."
-        keywords="Salesforce blog, LWC development, Apex programming, DevOps, cloud solutions, AI/ML, technology insights"
+        title="Salesforce & Cloud Tech Blog | Apex LWC DevOps AI | Dyota Cloud"
+        description="Expert articles on Salesforce development, Apex, LWC, DevOps, cloud computing, and AI/ML from Dyota Cloud's certified engineers. Stay ahead with actionable insights."
+        keywords="Salesforce blog India, Apex development tips, LWC tutorial, Salesforce Flow automation, DevOps CI CD guide, cloud computing blog India, AI ML Salesforce Einstein, Salesforce best practices 2026, Dyota Cloud blog, IT insights India"
         url="https://www.dyotacloud.com/#blog"
       />
       <div className="container">

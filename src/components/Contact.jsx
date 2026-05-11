@@ -30,9 +30,9 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <SEO 
-        title="Contact Dyota Cloud | Salesforce & IT Solutions Consultation"
-        description="Get in touch with Dyota Cloud for Salesforce implementation, LWC development, and IT solutions. Book a free consultation with our experts."
-        keywords="Contact Dyota Cloud, Salesforce consultation, IT services contact, CRM implementation, cloud solutions"
+        title="Contact Dyota Cloud | Free Salesforce Consultation | Noida India"
+        description="Contact Dyota Cloud for Salesforce implementation, Apex & LWC development, cloud infrastructure, DevOps & AI/ML solutions. Free consultation. Based in Noida, serving clients globally."
+        keywords="contact Salesforce partner India, Salesforce consultation free, hire Salesforce developer Noida, Salesforce implementation quote India, IT services contact Noida, Dyota Cloud contact, Salesforce project inquiry India, cloud solutions consultation India"
         url="https://www.dyotacloud.com/#contact"
       />
       <div className="contact-bg" />
@@ -90,17 +90,17 @@ export default function Contact() {
                 <div className="form-row">
                   <div className="form-group">
                     <label>Full Name *</label>
-                    <input type="text" placeholder="Rahul Sharma" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
+                    <input type="text" placeholder="Enter your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
                   </div>
                   <div className="form-group">
                     <label>Email *</label>
-                    <input type="email" placeholder="rahul@company.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
+                    <input type="email" placeholder="Enter your email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Phone</label>
-                    <input type="tel" placeholder={company.phone} value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+                    <input type="tel" placeholder="Enter your mobile number" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
                   </div>
                   <div className="form-group">
                     <label>Service</label>

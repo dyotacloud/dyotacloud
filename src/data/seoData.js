@@ -1,59 +1,106 @@
-// SEO Configuration and Structured Data
+// ── Dyota Cloud — Centralised SEO / Structured Data ──
 
-export const seoConfig = {
-  siteName: 'Dyota Cloud',
-  siteUrl: 'https://www.dyotacloud.com',
-  logo: 'https://www.dyotacloud.com/logo.png',
-  description: 'Dyota Cloud Pvt Ltd is a leading Salesforce partner in India offering LWC, Apex development, CRM solutions, and cloud transformation services.',
-  author: 'Dyota Cloud Pvt Ltd',
-  email: 'contact@dyotacloud.com',
-  phone: '+91-XXXXXXXXXX',
-  address: 'India',
-}
+export const SITE_URL = 'https://www.dyotacloud.com'
+export const SITE_NAME = 'Dyota Cloud'
+export const OG_IMAGE = `${SITE_URL}/og-image.png`
 
-// Organization Structured Data
+// ── Organization ──────────────────────────────────────────────
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
   name: 'Dyota Cloud Pvt Ltd',
-  url: seoConfig.siteUrl,
-  logo: seoConfig.logo,
-  description: seoConfig.description,
-  email: seoConfig.email,
-  phone: seoConfig.phone,
+  legalName: 'Dyota Cloud Private Limited',
+  url: SITE_URL,
+  logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png`, width: 200, height: 60 },
+  image: OG_IMAGE,
+  description: 'Certified Salesforce Consulting Partner in India delivering Salesforce, cloud, DevOps & AI/ML solutions.',
+  foundingDate: '2025',
+  email: 'hello@dyotacloud.com',
+  telephone: '+17864054800',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Sector 62',
+    addressLocality: 'Noida',
+    addressRegion: 'Uttar Pradesh',
+    postalCode: '201309',
     addressCountry: 'IN',
-    addressRegion: 'India',
   },
   sameAs: [
     'https://www.linkedin.com/company/dyota-cloud',
     'https://twitter.com/dyotacloud',
     'https://www.facebook.com/dyotacloud',
+    'https://www.instagram.com/dyotacloud',
   ],
 }
 
-// Service Structured Data
-export const serviceSchema = {
+// ── WebSite ───────────────────────────────────────────────────
+export const websiteSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Dyota Cloud - Salesforce & IT Services',
-  description: 'Salesforce development, LWC, Apex, CRM solutions, and cloud services',
-  url: seoConfig.siteUrl,
-  image: seoConfig.logo,
-  priceRange: '$$',
-  areaServed: 'IN',
-  serviceType: ['Salesforce Development', 'LWC Development', 'Apex Development', 'CRM Solutions'],
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  publisher: { '@id': `${SITE_URL}/#organization` },
 }
 
-// Breadcrumb Schema
-export const breadcrumbSchema = (items) => ({
+// ── BreadcrumbList ────────────────────────────────────────────
+export const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name: item.name,
-    item: item.url,
-  })),
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'About',    item: `${SITE_URL}/#about` },
+    { '@type': 'ListItem', position: 3, name: 'Services', item: `${SITE_URL}/#services` },
+    { '@type': 'ListItem', position: 4, name: 'Projects', item: `${SITE_URL}/#projects` },
+    { '@type': 'ListItem', position: 5, name: 'Blog',     item: `${SITE_URL}/#blog` },
+    { '@type': 'ListItem', position: 6, name: 'Careers',  item: `${SITE_URL}/#careers` },
+    { '@type': 'ListItem', position: 7, name: 'Contact',  item: `${SITE_URL}/#contact` },
+  ],
+}
+
+// ── FAQPage ───────────────────────────────────────────────────
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is Dyota Cloud an official Salesforce partner?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, Dyota Cloud is a certified Salesforce Consulting Partner since 2022 with 50+ certified experts.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What Salesforce services does Dyota Cloud offer?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We offer Salesforce implementation, Apex development, LWC development, API integration, data migration, and 24/7 support & maintenance.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Dyota Cloud located?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Dyota Cloud is headquartered in Sector 62, Noida, Uttar Pradesh, India. We serve clients globally.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How many projects has Dyota Cloud delivered?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Dyota Cloud has delivered 200+ enterprise projects across 15+ industries since 2019.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Dyota Cloud offer cloud services beyond Salesforce?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer AWS, Azure, GCP cloud architecture, DevOps & CI/CD pipelines, AI/ML solutions, and web & mobile development.' },
+    },
+  ],
+}
+
+// ── Helper: Article schema for blog posts ─────────────────────
+export const articleSchema = ({ title, description, image, datePublished, url }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image,
+  datePublished,
+  url,
+  author: { '@id': `${SITE_URL}/#organization` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
 })

@@ -1,4 +1,4 @@
-.why-section { background: var(--bg); }
+.why-section { background: var(--section-alt); }
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
 .why-card { padding: 32px 28px; position: relative; overflow: hidden; }
 .why-card::after {

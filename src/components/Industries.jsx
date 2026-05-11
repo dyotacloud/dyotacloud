@@ -21,9 +21,9 @@ export default function Industries() {
   return (
     <section id="industries" className="ind-section">
       <SEO 
-        title="Industries | Salesforce Solutions for Finance, Healthcare & More | Dyota Cloud"
-        description="Dyota Cloud provides industry-specific Salesforce solutions for Finance, Healthcare, Retail, Manufacturing, and more. Deep domain expertise."
-        keywords="Industry solutions, Salesforce finance, Salesforce healthcare, Salesforce retail, industry-specific CRM, enterprise solutions"
+        title="Industry-Specific Salesforce Solutions | Healthcare Finance Retail | Dyota Cloud"
+        description="Dyota Cloud delivers Salesforce solutions tailored for Healthcare, Finance, Retail, Education, Manufacturing & Logistics. Deep domain expertise, 200+ enterprise projects delivered."
+        keywords="Salesforce healthcare India, Salesforce finance CRM, Salesforce retail solutions, Salesforce manufacturing India, Salesforce education sector, Salesforce logistics India, industry specific CRM India, enterprise Salesforce solutions, vertical CRM India, Dyota Cloud industries"
         url="https://www.dyotacloud.com/#industries"
       />
       <div className="container">
