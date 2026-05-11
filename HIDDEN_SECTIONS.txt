@@ -1,0 +1,160 @@
+================================================================
+  HIDDEN / COMMENTED SECTIONS — DyotaCloud Website
+  Last updated: May 2026
+================================================================
+
+These 3 sections are currently commented out in src/App.jsx.
+To re-enable any of them, follow the steps below.
+
+----------------------------------------------------------------
+1. SALESFORCE SECTION  (src/components/Salesforce.jsx)
+----------------------------------------------------------------
+WHAT IT SHOWS:
+  - "Your Certified Salesforce Partner" heading with partner badges
+    (Consulting Partner, ISV Partner, AppExchange Listed, Crest Partner)
+  - 6 Salesforce service cards: Implementation, Apex & LWC Dev,
+    API & Integration, Data Migration, Support & Maintenance, Customization
+  - 5 Salesforce Cloud cards: Sales, Service, Marketing, Experience, Commerce
+  - Benefits strip: Certified Experts / Agile Delivery / End-to-End Solutions
+
+WHY COMMENTED:
+  Temporarily hidden to keep the page focused. Re-enable when you want
+  to highlight Salesforce capabilities as a dedicated section.
+
+HOW TO RE-ENABLE:
+  In src/App.jsx:
+    Step 1 — Uncomment the import at the top:
+      // import Salesforce from './components/Salesforce'
+      →  import Salesforce from './components/Salesforce'
+
+    Step 2 — Uncomment the JSX in <main>:
+      {/* <Salesforce /> */}
+      →  <Salesforce />
+
+  Recommended placement: after <About /> and before <Services />
+
+DATA SOURCE:
+  src/data/siteContent.json  →  "salesforceServices" and "salesforceClouds" arrays
+  src/assets/css/Salesforce.css
+
+----------------------------------------------------------------
+2. INDUSTRIES SECTION  (src/components/Industries.jsx)
+----------------------------------------------------------------
+WHAT IT SHOWS:
+  - "Industries We Transform" heading
+  - 6 industry cards: Healthcare, Finance, Retail, Education,
+    Manufacturing, Logistics — each with icon + description
+
+WHY COMMENTED:
+  Temporarily hidden to slim down the page. Re-enable when targeting
+  specific verticals or adding industry-specific case studies.
+
+HOW TO RE-ENABLE:
+  In src/App.jsx:
+    Step 1 — Uncomment the import:
+      // import Industries from './components/Industries'
+      →  import Industries from './components/Industries'
+
+    Step 2 — Uncomment the JSX:
+      {/* <Industries /> */}
+      →  <Industries />
+
+  Recommended placement: after <Services /> and before <Projects />
+
+DATA SOURCE:
+  src/data/siteContent.json  →  "industries" array
+  src/assets/css/Industries.css
+
+----------------------------------------------------------------
+3. PORTFOLIO / CASE STUDIES SECTION  (src/components/CaseStudies.jsx)
+----------------------------------------------------------------
+WHAT IT SHOWS:
+  - "Real Results for Real Businesses" heading  (id="portfolio")
+  - 6 case study cards with client name, industry badge, tech tags,
+    and result metric (e.g. "40% faster sales cycle")
+  - Clients: FinServ Corp, MediCare Plus, RetailMax, TechScale Inc,
+    GrowthCo, ManufactPro
+
+WHY COMMENTED:
+  The new Projects slider (id="projects") now serves as the primary
+  portfolio showcase. CaseStudies is kept for when you want a detailed
+  grid-style case study view alongside or instead of the slider.
+
+HOW TO RE-ENABLE:
+  In src/App.jsx:
+    Step 1 — Uncomment the import:
+      // import CaseStudies from './components/CaseStudies'
+      →  import CaseStudies from './components/CaseStudies'
+
+    Step 2 — Uncomment the JSX:
+      {/* <CaseStudies /> */}
+      →  <CaseStudies />
+
+  Recommended placement: after <Projects /> and before <ClienteleBar />
+  NOTE: The navbar "Portfolio" link (href="#portfolio") will also
+  become active again since CaseStudies uses id="portfolio".
+
+DATA SOURCE:
+  src/data/siteContent.json  →  "caseStudies" array
+  src/assets/css/CaseStudies.css
+
+----------------------------------------------------------------
+4. CAREERS SECTION  (src/components/Careers.jsx)
+----------------------------------------------------------------
+WHAT IT SHOWS:
+  - "Join the Dyota Cloud Team" heading  (id="careers")
+  - 4 culture cards: Grow Fast, Collaborative, Flexible Work, Great Pay
+  - 5 open job listings (accordion expand/collapse):
+      Salesforce Developer, Salesforce Architect, React.js Developer,
+      DevOps Engineer, Business Analyst
+    Each shows: location, type, experience, skill tags, Apply Now button
+  - Application form: Name, Email, Role dropdown, Cover Note
+    Submits to dummyjson API (replace with real endpoint when live)
+
+WHY COMMENTED:
+  Temporarily hidden. Re-enable when actively hiring or when the
+  careers page is ready with real job listings and a live form endpoint.
+
+HOW TO RE-ENABLE:
+  In src/App.jsx:
+    Step 1 — Uncomment the import:
+      // import Careers from './components/Careers'
+      →  import Careers from './components/Careers'
+
+    Step 2 — Uncomment the JSX:
+      {/* <Careers /> */}
+      →  <Careers />
+
+  Recommended placement: after <Blog /> and before <Contact />
+
+  NOTE: Replace the dummy form endpoint in Careers.jsx:
+    fetch('https://dummyjson.com/posts/add', ...)
+    → Replace with your real backend / email API / Formspree endpoint
+
+DATA SOURCE:
+  src/data/siteContent.json  →  "jobs" array
+  src/assets/css/Careers.css
+
+================================================================
+  NAVBAR LINKS FOR HIDDEN SECTIONS
+================================================================
+The following links were removed from the "navbar.links" array
+in src/data/siteContent.json along with their sections.
+
+To restore them, add back to the "links" array in order:
+
+  { "label": "Salesforce", "href": "#salesforce" }  — after "About"
+  { "label": "Industries", "href": "#industries" }  — after "Services"
+  { "label": "Portfolio",  "href": "#portfolio"  }  — after "Projects"
+
+Full restored links array:
+  { "label": "Home",       "href": "#home" },
+  { "label": "About",      "href": "#about" },
+  { "label": "Salesforce", "href": "#salesforce" },
+  { "label": "Services",   "href": "#services" },
+  { "label": "Industries", "href": "#industries" },
+  { "label": "Projects",   "href": "#projects" },
+  { "label": "Portfolio",  "href": "#portfolio" },
+  { "label": "Contact",    "href": "#contact" }
+
+================================================================

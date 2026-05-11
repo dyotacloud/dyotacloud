@@ -7,8 +7,8 @@
     "phone": "+1 (786) 405-4800",
     "whatsapp": "17864054800",
     "address": "Sector 62, Noida, UP – 201309, India",
-    "founded": "2019",
-    "copyright": "© 2026 Dyota Cloud Pvt Ltd. All rights reserved."
+    "founded": "2025",
+    "copyright": "© 2025 Dyota Cloud Pvt Ltd. All rights reserved."
   },
 
   "navbar": {
@@ -17,31 +17,29 @@
     "links": [
       { "label": "Home",       "href": "#home" },
       { "label": "About",      "href": "#about" },
-      { "label": "Salesforce", "href": "#salesforce" },
       { "label": "Services",   "href": "#services" },
-      { "label": "Industries", "href": "#industries" },
-      { "label": "Portfolio",  "href": "#portfolio" }, 
+      { "label": "Projects",   "href": "#projects" },
       { "label": "Contact",    "href": "#contact" }
     ]
   },
 
   "hero": {
-    "badge": "Official Salesforce Partner · 5+ Years Experience",
+    "badge": "Officially Est. Jan 2025 · Working Since 2019",
     "heading1": "Transform Your Business with",
     "heading2": "Salesforce &",
     "heading3": "Cloud Solutions",
-    "description": "Delivering enterprise-grade IT and Salesforce solutions with 5+ years of proven expertise across multiple technologies and industries. From startups to Fortune 500 — we scale with you.",
+    "description": "Dyota Cloud is a certified Salesforce partner officially incorporated in January 2025 — backed by 6+ years of hands-on IT experience since 2019. We deliver Salesforce, cloud, DevOps, and AI/ML solutions built for real business outcomes.",
     "checks": [
       "Certified Salesforce Partner",
       "Multi-Technology Expertise",
       "Enterprise-Scale Delivery",
       "24/7 Support & Maintenance"
     ],
-    "cta": { "primary": "Get Started", "primaryHref": "#contact", "secondary": "Talk to Expert", "secondaryHref": "#salesforce" },
+    "cta": { "primary": "Get Started", "primaryHref": "#contact", "secondary": "Talk to Expert", "secondaryHref": "#services" },
     "trust": [
-      { "icon": "Award",    "val": "5+",   "label": "Years Experience" },
-      { "icon": "Briefcase","val": "200+", "label": "Enterprise Projects" },
-      { "icon": "Users",    "val": "50+",  "label": "Certified Experts" }
+      { "icon": "Award",    "val": "6+",  "label": "Years Experience" },
+      { "icon": "Briefcase","val": "30+", "label": "Projects Delivered" },
+      { "icon": "Users",    "val": "15+", "label": "Certified Experts" }
     ],
     "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=85&auto=format&fit=crop",
     "imageAlt": "Professional team working on cloud solutions"
@@ -92,41 +90,43 @@
   },
 
   "stats": [
-    { "value": "5+",   "label": "Years Experience",    "sub": "In Salesforce & Cloud" },
-    { "value": "200+", "label": "Projects Delivered",  "sub": "Across 15+ industries" },
-    { "value": "98%",  "label": "Client Satisfaction", "sub": "CSAT score" },
-    { "value": "50+",  "label": "Certified Experts",   "sub": "Salesforce & Cloud" }
+    { "value": "6+",  "label": "Years Experience",   "sub": "Working since 2019" },
+    { "value": "30+", "label": "Projects Delivered", "sub": "Across multiple industries" },
+    { "value": "98%", "label": "Client Satisfaction","sub": "CSAT score" },
+    { "value": "15+", "label": "Certified Experts",  "sub": "Salesforce & Cloud" }
   ],
 
   "about": {
     "tag": "About Us",
-    "heading": "5+ Years of Building",
-    "headingHighlight": "Enterprise Solutions",
-    "desc1": "Dyota Cloud is a multi-technology IT company and certified Salesforce partner headquartered in Noida, India. Since 2019, we've been helping businesses of all sizes — from ambitious startups to global enterprises — leverage the power of Salesforce and modern cloud technologies to drive real, measurable outcomes.",
-    "desc2": "Our team of 50+ certified experts brings deep expertise across Salesforce, React, Node.js, AWS, Azure, DevOps, and AI/ML. We don't just implement software — we become your long-term technology partner.",
+    "heading": "6+ Years of Experience,",
+    "headingHighlight": "Officially Since 2025",
+    "desc1": "Dyota Cloud was officially incorporated on January 1, 2025 in Noida, India — but our roots go back to 2019. Our founding team has been delivering Salesforce, cloud, and IT solutions for 6+ years, with 30+ projects completed across industries before and after our official launch.",
+    "desc2": "We combine the reliability of an experienced team with the energy of a fresh company. Our certified Salesforce developers, cloud architects, and full-stack engineers are here to become your long-term technology partner — not just a vendor.",
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop",
     "imageAlt": "Dyota Cloud team at work",
-    "imageBadge": { "icon": "FaTrophy", "title": "Salesforce Partner", "sub": "Since 2022" },
+    "imageBadge": { "icon": "FaTrophy", "title": "Salesforce Partner", "sub": "Est. Jan 2025" },
     "cta": "Work With Us",
     "highlights": [
-      "5+ years of hands-on Salesforce & cloud experience",
-      "Multi-technology stack: Salesforce, React, Node, AWS, Azure, AI/ML",
-      "Delivered 200+ large-scale enterprise projects",
-      "Served startups, mid-market, and Fortune 500 companies",
-      "Focus on scalability, performance, and long-term innovation",
-      "ISO 27001 certified processes and security practices"
+      "Officially incorporated January 1, 2025 — Noida, India",
+      "Founding team working in IT & Salesforce since 2019",
+      "30+ projects delivered across Salesforce, cloud, web & mobile",
+      "Certified Salesforce Consulting Partner",
+      "Multi-technology stack: Salesforce, React, Node.js, AWS, Azure, AI/ML",
+      "Client-first culture with a focus on quality and long-term partnerships"
     ],
     "milestones": [
-      { "year": "2019", "title": "Founded",                  "desc": "Started as a Salesforce consulting boutique in Noida." },
-      { "year": "2020", "title": "First Enterprise Client",  "desc": "Delivered Sales Cloud for a 500-user FinServ company." },
-      { "year": "2021", "title": "Expanded to Cloud & DevOps","desc": "Added AWS, Azure, and DevOps practice areas." },
-      { "year": "2022", "title": "Salesforce Partner Status","desc": "Achieved official Salesforce Consulting Partner certification." },
-      { "year": "2024", "title": "200+ Projects",            "desc": "Crossed 200 successful project deliveries across 15+ industries." }
+      { "year": "2019",     "title": "The Beginning",          "desc": "Our founding team started working in Salesforce & IT consulting, building expertise across CRM, cloud, and web technologies." },
+      { "year": "2021",     "title": "Cloud & DevOps",         "desc": "Expanded into AWS, Azure, DevOps, and full-stack web & mobile development." },
+      { "year": "2023",     "title": "30+ Projects",           "desc": "Crossed 30 successful project deliveries across Salesforce, cloud, and custom development." },
+      { "year": "Jan 2025", "title": "Officially Founded",     "desc": "Dyota Cloud Pvt Ltd officially incorporated on January 1, 2025 in Sector 62, Noida." },
+      { "year": "Mid 2025", "title": "First Official Clients", "desc": "Signed first official clients post-incorporation — delivered The Unique Home Services website and kicked off AI/ML & cloud projects." },
+      { "year": "Late 2025","title": "Team Expansion",         "desc": "Grew to 15+ certified experts across Salesforce, React, DevOps, and AI/ML. Onboarded clients from India and the US." },
+      { "year": "2026",     "title": "Scaling Up",             "desc": "Expanding service offerings, targeting global markets, and building long-term partnerships across industries." }
     ],
     "values": [
-      { "icon": "FaBullseye", "title": "Mission", "desc": "Empower businesses through technology that scales." },
-      { "icon": "FaEye",      "title": "Vision",  "desc": "Be the most trusted IT partner in South Asia." },
-      { "icon": "FaGem",      "title": "Values",  "desc": "Integrity, innovation, and client-first thinking." }
+      { "icon": "FaBullseye", "title": "Mission", "desc": "Empower businesses through technology that scales from day one." },
+      { "icon": "FaEye",      "title": "Vision",  "desc": "Become the most trusted IT partner for growing businesses in India and beyond." },
+      { "icon": "FaGem",      "title": "Values",  "desc": "Integrity, speed, innovation, and putting clients first — always." }
     ]
   },
 
@@ -201,6 +201,36 @@
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0!2d77.3649!3d28.6273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM3JzM4LjMiTiA3N8KwMjEnNTMuNiJF!5e0!3m2!1sen!2sin!4v1"
   },
 
+  "blog": [
+    {
+      "id": 1,
+      "tag": "Salesforce",
+      "title": "Top 5 Salesforce LWC Best Practices for Enterprise Apps",
+      "excerpt": "Lightning Web Components have transformed Salesforce UI development. Here are the patterns our architects use on every enterprise project to keep code clean and performant.",
+      "date": "Apr 18, 2026",
+      "readTime": "6 min read",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop"
+    },
+    {
+      "id": 2,
+      "tag": "DevOps",
+      "title": "Zero-Downtime Deployments with Kubernetes & Salesforce CI/CD",
+      "excerpt": "How we cut deployment time from 2 hours to 8 minutes for a 500-user org using GitHub Actions, Salesforce DX, and a blue-green Kubernetes strategy.",
+      "date": "Apr 10, 2026",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=700&q=80&auto=format&fit=crop"
+    },
+    {
+      "id": 3,
+      "tag": "AI / ML",
+      "title": "Einstein AI vs Custom ML Models: When to Use Which",
+      "excerpt": "Salesforce Einstein is powerful out of the box, but sometimes a custom Python model wins. We break down the decision framework we use for every AI engagement.",
+      "date": "Mar 28, 2026",
+      "readTime": "7 min read",
+      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80&auto=format&fit=crop"
+    }
+  ],
+
   "footer": {
     "desc": "Your Trusted Salesforce & Cloud Transformation Partner. 5+ years of proven expertise across multiple technologies.",
     "badges": ["Salesforce Partner", "ISO 27001", "5+ Years"],
@@ -211,6 +241,101 @@
       "Legal":      ["Privacy Policy", "Terms of Service", "Cookie Policy", "GDPR"]
     }
   },
+
+  "projects": [
+    {
+      "id": 0,
+      "title": "The Unique Home Services",
+      "client": "The Unique Home Services",
+      "category": "Web Development",
+      "status": "completed",
+      "year": "2025",
+      "url": "https://theuniquehomeservices.com",
+      "desc": "Full-stack React website for a US-based home services company offering electrical, HVAC, cleaning, and repair services. Built with React, responsive design, service pages, contact forms, and WhatsApp/call CTAs for instant lead capture.",
+      "tech": ["React", "Node.js", "CSS3", "Responsive Design", "WhatsApp API"],
+      "image": "/theunique.png",
+      "color": "#16a34a",
+      "result": "Live production website — theuniquehomeservices.com"
+    },
+    {
+      "id": 1,
+      "title": "Salesforce CRM Overhaul",
+      "client": "FinServ Corp",
+      "category": "Salesforce",
+      "status": "completed",
+      "year": "2024",
+      "desc": "Full Sales Cloud implementation for a 500-user financial services firm — migrated 10k+ leads, automated pipelines, and cut sales cycle by 40%.",
+      "tech": ["Sales Cloud", "Apex", "LWC", "Data Loader"],
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop",
+      "color": "#00A1E0",
+      "result": "40% faster sales cycle"
+    },
+    {
+      "id": 2,
+      "title": "Patient Self-Service Portal",
+      "client": "MediCare Plus",
+      "category": "Experience Cloud",
+      "status": "completed",
+      "year": "2024",
+      "desc": "HIPAA-compliant patient portal with appointment booking, health records access, and real-time chat — built on Salesforce Experience Cloud.",
+      "tech": ["Experience Cloud", "LWC", "REST API", "HIPAA"],
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80&auto=format&fit=crop",
+      "color": "#0ea5e9",
+      "result": "60% drop in support calls"
+    },
+    {
+      "id": 3,
+      "title": "E-Commerce Unification",
+      "client": "RetailMax",
+      "category": "Commerce Cloud",
+      "status": "completed",
+      "year": "2023",
+      "desc": "Unified B2C commerce platform integrating Salesforce Commerce Cloud with ERP and marketing automation — tripled revenue in 6 months.",
+      "tech": ["Commerce Cloud", "Marketing Cloud", "MuleSoft"],
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80&auto=format&fit=crop",
+      "color": "#8b5cf6",
+      "result": "3x revenue in 6 months"
+    },
+    {
+      "id": 4,
+      "title": "DevOps Pipeline Automation",
+      "client": "TechScale Inc",
+      "category": "DevOps",
+      "status": "completed",
+      "year": "2023",
+      "desc": "End-to-end CI/CD pipeline with Kubernetes and Docker — reduced deployment time from 2 hours to 8 minutes with zero-downtime releases.",
+      "tech": ["AWS", "Docker", "Kubernetes", "Jenkins"],
+      "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=700&q=80&auto=format&fit=crop",
+      "color": "#f59e0b",
+      "result": "93% faster deployments"
+    },
+    {
+      "id": 5,
+      "title": "AI-Powered Lead Scoring",
+      "client": "GrowthCo",
+      "category": "AI / ML",
+      "status": "in-progress",
+      "year": "2025",
+      "desc": "Einstein AI lead scoring model integrated with Sales Cloud — currently in UAT phase with 55% projected improvement in qualified lead conversion.",
+      "tech": ["Einstein AI", "Apex", "Python", "Tableau"],
+      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80&auto=format&fit=crop",
+      "color": "#16a34a",
+      "result": "55% higher conversion (projected)"
+    },
+    {
+      "id": 6,
+      "title": "Multi-Cloud Data Platform",
+      "client": "CloudNine",
+      "category": "Cloud",
+      "status": "coming-soon",
+      "year": "2025",
+      "desc": "Unified data lakehouse spanning AWS, Azure, and GCP — real-time analytics, ML pipelines, and a single pane of glass for enterprise data governance.",
+      "tech": ["AWS", "Azure", "GCP", "Snowflake", "dbt"],
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80&auto=format&fit=crop",
+      "color": "#6366f1",
+      "result": "Launching Q3 2025"
+    }
+  ],
 
   "team": [
     { "id": 1, "firstName": "Arjun",   "lastName": "Sharma",   "title": "CEO & Founder",      "cert": "Salesforce Architect",       "image": "https://randomuser.me/api/portraits/men/32.jpg" },

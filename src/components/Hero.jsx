@@ -45,9 +45,9 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <SEO 
-        title="Salesforce Development Company in India | Dyota Cloud"
-        description="Dyota Cloud is a leading Salesforce partner in India. We provide LWC development, Apex development, CRM solutions, and cloud transformation services."
-        keywords="Salesforce development, LWC development, Apex development, CRM solutions, Salesforce partner India, cloud services"
+        title="Salesforce Partner India | Apex LWC Development | Dyota Cloud"
+        description="Dyota Cloud — certified Salesforce Consulting Partner in India. 5+ years, 200+ enterprise projects. Salesforce implementation, Apex & LWC development, cloud & AI/ML solutions. Get a free consultation."
+        keywords="Salesforce partner India, Salesforce implementation company India, Apex developer India, LWC developer India, certified Salesforce partner Noida, hire Salesforce developer India, Salesforce consulting firm India, CRM implementation India, cloud transformation India, IT company Noida Sector 62, best Salesforce company India 2026, Dyota Cloud"
         url="https://www.dyotacloud.com/"
       />
       <canvas ref={canvasRef} className="hero-canvas" />

@@ -1,4 +1,4 @@
-.team-section { background: var(--section-alt); }
+.team-section { background: var(--bg); }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .team-card { overflow: hidden; }
 .team-img-wrap { position: relative; overflow: hidden; }

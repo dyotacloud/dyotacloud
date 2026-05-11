@@ -1,4 +1,4 @@
-.services-section { background: var(--bg); }
+.services-section { background: var(--section-alt); }
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .svc-card { padding: 30px 26px; position: relative; overflow: hidden; }
 .svc-card::before {
