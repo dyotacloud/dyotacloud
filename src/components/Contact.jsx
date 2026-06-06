@@ -48,7 +48,7 @@ export default function Contact() {
             {[
               { Icon: Mail,   label: 'Email',  val: company.email },
               { Icon: Phone,  label: 'Phone',  val: company.phone },
-              { Icon: MapPin, label: 'Office', val: 'Sector 62, Noida, UP – 201309, India' },
+              { Icon: MapPin, label: 'Office', val: company.address },
             ].map(({ Icon, label, val }) => (
               <div className="contact-card" key={label}>
                 <div className="contact-icon"><Icon size={17} color="var(--green)" /></div>

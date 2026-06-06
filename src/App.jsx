@@ -66,7 +66,7 @@ export default function App() {
         {/* <CaseStudies /> */}
 
         <ClienteleBar />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Team />
         <Blog />
         {/* <Careers /> */}
