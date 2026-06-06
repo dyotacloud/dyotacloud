@@ -101,11 +101,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-right">
+        {/* <div className="hero-right">
           <div className="hero-img-wrap">
             <img src={hero.image} alt={hero.imageAlt} className="hero-img" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="hero-wave">

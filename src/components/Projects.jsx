@@ -156,7 +156,7 @@ export default function Projects() {
               {/* Image */}
               <div className="proj-img-wrap" style={{ '--accent-color': p.color }}>
                 <img src={p.image} alt={p.title} className="proj-img" draggable={false}
-                  onError={e => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop' }}
+                  onError={e => { e.target.onerror = null; e.target.src = '' }}
                 />
                 <div className="proj-img-overlay" />
                 <span className={`proj-status-badge status-${p.status}`}>
@@ -177,9 +177,9 @@ export default function Projects() {
                 <div className="proj-tech">
                   {p.tech.map(t => <span key={t} className="proj-tech-tag">{t}</span>)}
                 </div>
-                <div className="proj-result" style={{ borderColor: p.color, color: p.color }}>
+                {/* <div className="proj-result" style={{ borderColor: p.color, color: p.color }}>
                   <span>📊</span> {p.result}
-                </div>
+                </div> */}
                 {p.url && (
                   <a
                     href={p.url}
@@ -189,7 +189,7 @@ export default function Projects() {
                     style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}cc)` }}
                     onClick={e => e.stopPropagation()}
                   >
-                    🔗 View Live Site
+                    🔗 {p.viewText}
                   </a>
                 )}
               </div>
