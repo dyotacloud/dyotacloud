@@ -6,16 +6,16 @@ import '../assets/css/Projects.css'
 const { projects } = content
 
 const STATUS_CONFIG = {
-  completed:     { label: 'Completed',   emoji: '✅', color: '#16a34a' },
-  'in-progress': { label: 'In Progress', emoji: '🔄', color: '#f59e0b' },
-  'coming-soon': { label: 'Coming Soon', emoji: '🚀', color: '#6366f1' },
+  completed:     { label: 'Completed',   emoji: '', color: '#16a34a' },
+  'in-progress': { label: 'In Progress', emoji: '', color: '#f59e0b' },
+  'coming-soon': { label: 'Coming Soon', emoji: '', color: '#6366f1' },
 }
 
 const FILTERS = [
   { key: 'All',              label: 'All Projects' },
-  { key: 'completed',        label: '✅ Completed',      type: 'status' },
-  { key: 'in-progress',      label: '🔄 In Progress',    type: 'status' },
-  { key: 'coming-soon',      label: '🚀 Coming Soon',    type: 'status' },
+  { key: 'completed',        label: 'Completed',      type: 'status' },
+  { key: 'in-progress',      label: 'In Progress',    type: 'status' },
+  { key: 'coming-soon',      label: 'Coming Soon',    type: 'status' },
   { key: 'Web Development',  label: 'Web Dev',           type: 'category' },
   { key: 'Salesforce',       label: 'Salesforce',        type: 'category' },
   { key: 'DevOps',           label: 'DevOps',            type: 'category' },
