@@ -41,3 +41,96 @@
 .contact-success p { color: var(--text-secondary); margin-bottom: 24px; }
 @media (max-width: 960px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .contact-form-wrap { padding: 22px; } }
+
+/* ── Dummy CAPTCHA widget ── */
+.dummy-captcha {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  background: #f9f9f9;
+  padding: 14px 16px;
+  width: 300px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+[data-theme="dark"] .dummy-captcha {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+}
+.dummy-captcha.captcha-has-error { border-color: #ef4444; }
+
+.dummy-captcha-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Checkbox button */
+.captcha-checkbox {
+  width: 26px; height: 26px;
+  border: 2px solid #c1c1c1;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  padding: 0;
+}
+.captcha-checkbox:hover { border-color: #4a90e2; }
+.captcha-checkbox.checked {
+  background: #4a90e2;
+  border-color: #4a90e2;
+}
+[data-theme="dark"] .captcha-checkbox { background: #2a2a2a; border-color: #555; }
+
+/* Spinner inside checkbox while verifying */
+.captcha-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid #c1c1c1;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.captcha-label {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  user-select: none;
+}
+[data-theme="dark"] .captcha-label { color: #ccc; }
+
+/* Right branding block */
+.captcha-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-left: 1px solid #e0e0e0;
+  padding-left: 12px;
+  min-width: 52px;
+}
+[data-theme="dark"] .captcha-brand { border-left-color: #3a3a3a; }
+.captcha-brand-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  font-family: Roboto, Arial, sans-serif;
+  letter-spacing: 0.3px;
+}
+[data-theme="dark"] .captcha-brand-name { color: #aaa; }
+.captcha-brand-links {
+  font-size: 8px;
+  color: #999;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Error text */
+.captcha-error {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 600;
+  margin: 6px 0 0 0;
+}

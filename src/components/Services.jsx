@@ -17,7 +17,7 @@ function ServiceCard({ s, delay }) {
       </div>
       <h3>{s.title}</h3>
       <p>{s.desc}</p>
-      <span className="svc-link">Explore →</span>
+      {/* <span className="svc-link">Explore →</span> */}
     </div>
   )
 }

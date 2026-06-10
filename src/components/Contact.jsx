@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Phone, MapPin, Send, CheckCircle, ShieldCheck } from 'lucide-react'
 import { FaEnvelope, FaCheckCircle } from 'react-icons/fa'
 import SEO from './SEO'
 import useReveal from '../hooks/useReveal'
@@ -9,15 +9,66 @@ import '../assets/css/Contact.css'
 const { company } = content
 const services = ['Salesforce Implementation', 'Apex & LWC Development', 'API Integration', 'Cloud Infrastructure', 'DevOps & CI/CD', 'AI/ML Solutions', 'Other']
 
+/* ── Dummy reCAPTCHA-style widget ── */
+function DummyCaptcha({ checked, onChange, error }) {
+  const [verifying, setVerifying] = useState(false)
+
+  const handleCheck = () => {
+    if (checked || verifying) return
+    setVerifying(true)
+    setTimeout(() => {
+      setVerifying(false)
+      onChange(true)
+    }, 1200)
+  }
+
+  return (
+    <div className={`dummy-captcha${error ? ' captcha-has-error' : ''}`}>
+      <div className="dummy-captcha-inner">
+        {/* Checkbox area */}
+        <button
+          type="button"
+          className={`captcha-checkbox${verifying ? ' verifying' : ''}${checked ? ' checked' : ''}`}
+          onClick={handleCheck}
+          aria-label="Verify you are human"
+        >
+          {verifying && <span className="captcha-spinner" />}
+          {checked && !verifying && <CheckCircle size={18} color="#fff" strokeWidth={3} />}
+        </button>
+
+        {/* Label */}
+        <span className="captcha-label">I'm not a robot</span>
+
+        {/* Google branding block (dummy) */}
+        <div className="captcha-brand">
+          <div className="captcha-brand-logo">
+            <ShieldCheck size={22} color="#4285F4" />
+          </div>
+          <span className="captcha-brand-name">reCAPTCHA</span>
+          <span className="captcha-brand-links">Privacy · Terms</span>
+        </div>
+      </div>
+      {error && <p className="captcha-error">Please verify that you're not a robot.</p>}
+    </div>
+  )
+}
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [captchaDone, setCaptchaDone] = useState(false)
+  const [captchaError, setCaptchaError] = useState(false)
   const leftRef = useReveal()
   const rightRef = useReveal()
 
   const handleSubmit = async e => {
     e.preventDefault()
+    if (!captchaDone) {
+      setCaptchaError(true)
+      return
+    }
+    setCaptchaError(false)
     setLoading(true)
     await fetch('https://dummyjson.com/posts/add', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -27,9 +78,15 @@ export default function Contact() {
     setSent(true)
   }
 
+  const handleSendAnother = () => {
+    setSent(false)
+    setCaptchaDone(false)
+    setCaptchaError(false)
+  }
+
   return (
     <section id="contact" className="contact-section">
-      <SEO 
+      <SEO
         title="Contact Dyota Cloud | Free Salesforce Consultation | Noida India"
         description="Contact Dyota Cloud for Salesforce implementation, Apex & LWC development, cloud infrastructure, DevOps & AI/ML solutions. Free consultation. Based in Noida, serving clients globally."
         keywords="contact Salesforce partner India, Salesforce consultation free, hire Salesforce developer Noida, Salesforce implementation quote India, IT services contact Noida, Dyota Cloud contact, Salesforce project inquiry India, cloud solutions consultation India"
@@ -78,7 +135,7 @@ export default function Contact() {
               <div className="success-icon"><FaCheckCircle size={48} color="var(--green)" /></div>
               <h3>Message Sent!</h3>
               <p>Our team will reach out within 24 hours.</p>
-              <button className="btn-primary" onClick={() => setSent(false)}>Send Another</button>
+              <button className="btn-primary" onClick={handleSendAnother}>Send Another</button>
             </div>
           ) : (
             <>
@@ -114,6 +171,13 @@ export default function Contact() {
                   <label>Message *</label>
                   <textarea rows={5} placeholder="Tell us about your project..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} required />
                 </div>
+
+                <DummyCaptcha
+                  checked={captchaDone}
+                  onChange={setCaptchaDone}
+                  error={captchaError}
+                />
+
                 <button type="submit" className="btn-primary submit-btn" disabled={loading}>
                   {loading ? <><span className="spinner" /> Sending...</> : <><Send size={14} /><span>Send Message</span></>}
                 </button>

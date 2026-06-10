@@ -24,7 +24,8 @@ export default function Footer() {
             <a href={`tel:${company.phone.replace(/\s/g,'')}`}><Phone size={13} /> {company.phone}</a>
           </div>
           <div className="footer-socials">
-            {[Linkedin, Twitter, Github, Youtube, Instagram].map((Icon, i) => (
+            {/* {[Linkedin, Twitter, Github, Youtube, Instagram].map((Icon, i) => ( */}
+              {[Linkedin].map((Icon, i) => (
               <a key={i} href="#" aria-label="social"><Icon size={15} /></a>
             ))}
           </div>
@@ -47,7 +48,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <span>{company.copyright}</span>
-          <span>Made with <FaHeart style={{ display:'inline', color:'#22c55e', verticalAlign:'middle' }} size={12} /> in India 🇮🇳</span>
+          {/* <span>Made with <FaHeart style={{ display:'inline', color:'#22c55e', verticalAlign:'middle' }} size={12} /> in India 🇮🇳</span> */}
         </div>
       </div>
     </footer>

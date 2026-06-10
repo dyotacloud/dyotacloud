@@ -9,9 +9,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [dark, setDark] = useState(() => {
-    // Check localStorage for saved preference
     const saved = localStorage.getItem('theme')
-    return saved ? saved === 'dark' : false
+    if (saved) return saved === 'dark'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
   useEffect(() => {

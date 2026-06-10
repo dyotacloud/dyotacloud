@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import useReveal from '../hooks/useReveal'
 import content from '../data/siteContent.json'
 import '../assets/css/Projects.css'
@@ -29,13 +29,12 @@ export default function Projects() {
   const titleRef = useReveal()
   const [activeFilter, setActiveFilter] = useState('All')
   const [current, setCurrent] = useState(0)
-  const [direction, setDirection] = useState('next') // for animation direction
+  const [direction, setDirection] = useState('next')
   const [paused, setPaused] = useState(false)
-  const [progress, setProgress] = useState(0)
-  const progressRef = useRef(null)
+  const timerRef = useRef(null)
   const dragStart = useRef(0)
   const isDragging = useRef(false)
-  const progressStart = useRef(null)
+  const filtersScrollRef = useRef(null)
 
   const filtered = activeFilter === 'All'
     ? projects
@@ -48,47 +47,30 @@ export default function Projects() {
   const goTo = useCallback((idx, dir = 'next') => {
     setDirection(dir)
     setCurrent((idx + total) % total)
-    setProgress(0)
-    progressStart.current = performance.now()
   }, [total])
 
   const next = useCallback(() => goTo(current + 1, 'next'), [current, goTo])
   const prev = useCallback(() => goTo(current - 1, 'prev'), [current, goTo])
 
-  // Reset on filter change
+  useEffect(() => { setCurrent(0) }, [activeFilter])
+
+  // Scroll active filter tab into view horizontally (no page scroll)
   useEffect(() => {
-    setCurrent(0)
-    setProgress(0)
-    progressStart.current = performance.now()
+    const el = filtersScrollRef.current
+    if (!el) return
+    const active = el.querySelector('.proj-filter-btn.active')
+    if (active) active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' })
   }, [activeFilter])
 
-  // Auto-slide + progress bar
   useEffect(() => {
-    if (paused || total <= 1) {
-      cancelAnimationFrame(progressRef.current)
-      return
-    }
-
-    progressStart.current = performance.now()
-
-    const tick = (now) => {
-      const elapsed = now - progressStart.current
-      const pct = Math.min((elapsed / AUTO_INTERVAL) * 100, 100)
-      setProgress(pct)
-      if (elapsed >= AUTO_INTERVAL) {
-        setDirection('next')
-        setCurrent(c => (c + 1) % total)
-        progressStart.current = performance.now()
-        setProgress(0)
-      }
-      progressRef.current = requestAnimationFrame(tick)
-    }
-
-    progressRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(progressRef.current)
+    if (paused || total <= 1) return
+    timerRef.current = setInterval(() => {
+      setDirection('next')
+      setCurrent(c => (c + 1) % total)
+    }, AUTO_INTERVAL)
+    return () => clearInterval(timerRef.current)
   }, [paused, total, activeFilter])
 
-  // Swipe / drag
   const onDragStart = (e) => {
     dragStart.current = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX
     isDragging.current = true
@@ -135,11 +117,6 @@ export default function Projects() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* Progress bar */}
-          {/* <div className="proj-progress-bar">
-            <div className="proj-progress-fill" style={{ width: `${progress}%` }} />
-          </div> */}
-
           <div className="proj-slider-inner">
             <button className="proj-arrow proj-arrow-left" onClick={() => { prev(); setPaused(false) }} aria-label="Previous">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -153,7 +130,6 @@ export default function Projects() {
               onTouchStart={onDragStart}
               onTouchEnd={onDragEnd}
             >
-              {/* Image */}
               <div className="proj-img-wrap" style={{ '--accent-color': p.color }}>
                 <img src={p.image} alt={p.title} className="proj-img" draggable={false}
                   onError={e => { e.target.onerror = null; e.target.src = '' }}
@@ -166,7 +142,6 @@ export default function Projects() {
                 <span className="proj-counter">{current + 1} / {total}</span>
               </div>
 
-              {/* Content */}
               <div className="proj-content" style={{ '--accent-color': p.color }}>
                 <span className="proj-category" style={{ background: `${p.color}18`, color: p.color }}>
                   {p.category}
@@ -177,9 +152,6 @@ export default function Projects() {
                 <div className="proj-tech">
                   {p.tech.map(t => <span key={t} className="proj-tech-tag">{t}</span>)}
                 </div>
-                {/* <div className="proj-result" style={{ borderColor: p.color, color: p.color }}>
-                  <span>📊</span> {p.result}
-                </div> */}
                 {p.url && (
                   <a
                     href={p.url}
@@ -200,11 +172,10 @@ export default function Projects() {
             </button>
           </div>
 
-          {/* Dots */}
           <div className="proj-dots">
             {filtered.map((item, i) => (
               <button
-                key={item.id}
+                key={`dot-${activeFilter}-${i}`}
                 className={`proj-dot ${i === current ? 'active' : ''}`}
                 onClick={() => goTo(i, i > current ? 'next' : 'prev')}
                 aria-label={`Project ${i + 1}`}
@@ -214,11 +185,10 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Thumbnail strip */}
         <div className="proj-thumbs">
           {filtered.map((item, i) => (
             <button
-              key={item.id}
+              key={`thumb-${activeFilter}-${i}`}
               className={`proj-thumb ${i === current ? 'active' : ''}`}
               onClick={() => goTo(i, i > current ? 'next' : 'prev')}
               style={{ '--thumb-color': item.color }}

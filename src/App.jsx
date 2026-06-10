@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import SEO from './components/SEO'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
@@ -36,13 +35,6 @@ const breadcrumbSchema = {
 }
 
 export default function App() {
-  useEffect(() => {
-    const saved = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const theme = saved || (prefersDark ? 'dark' : 'light')
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [])
-
   return (
     <>
       <SEO structuredData={breadcrumbSchema} />
@@ -50,7 +42,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
+        {/* <TrustBar /> */}
         <Stats />
         <About />
 
@@ -65,10 +57,10 @@ export default function App() {
 
         {/* <CaseStudies /> */}
 
-        <ClienteleBar />
+        {/* <ClienteleBar /> */}
         {/* <Testimonials /> */}
-        <Team />
-        <Blog />
+        {/* <Team /> */}
+        {/* <Blog /> */}
         {/* <Careers /> */}
         <Contact />
       </main>

@@ -23,7 +23,7 @@ export default function WhyUs() {
       <div className="container">
         <div className="section-header reveal" ref={titleRef}>
           <span className="section-tag">✦ Why Choose Us</span>
-          <h2 className="section-title">Why 200+ Companies <span className="gradient-text">Choose Dyota Cloud</span></h2>
+          <h2 className="section-title">Why Companies <span className="gradient-text">Choose Dyota Cloud</span></h2>
           <p className="section-sub">We don't just implement software — we become your long-term technology partner committed to your growth.</p>
         </div>
         <div className="why-grid">
