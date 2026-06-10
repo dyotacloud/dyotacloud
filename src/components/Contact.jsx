@@ -178,7 +178,7 @@ export default function Contact() {
                   error={captchaError}
                 />
 
-                <button type="submit" className="btn-primary submit-btn" disabled={loading}>
+                <button type="submit" className="btn-primary submit-btn submit-btn-form" disabled={loading}>
                   {loading ? <><span className="spinner" /> Sending...</> : <><Send size={14} /><span>Send Message</span></>}
                 </button>
               </form>

@@ -156,10 +156,12 @@
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .submit-btn { display: none !important; }
+  .submit-btn-form { display: flex !important; }
 }
 @media (max-width: 480px) {
   .nav-inner { gap: 8px; }
   .nav-actions { gap: 6px; }
   .nav-logo span { font-size: 16px; }
   .submit-btn { display: none !important; }
+  .submit-btn-form { display: flex  !important; }
 }
