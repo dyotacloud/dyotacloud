@@ -95,6 +95,8 @@ section { padding: 100px 0; }
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  /* fix: ensure button is never hidden under stacking context on mobile */
+  isolation: isolate;
 }
 .btn-primary::after {
   content: '';
@@ -210,6 +212,11 @@ section { padding: 100px 0; }
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
   border-color: var(--green);
+}
+
+/* On mobile, card hover transform creates stacking context that clips children */
+@media (max-width: 768px) {
+  .card:hover { transform: none; }
 }
 
 /* ── Reveal ── */
