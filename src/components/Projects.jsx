@@ -36,6 +36,10 @@ export default function Projects() {
   const isDragging = useRef(false)
   const filtersScrollRef = useRef(null)
 
+  // Filter scroll arrows state
+  const [showLeftArrow, setShowLeftArrow] = useState(false)
+  const [showRightArrow, setShowRightArrow] = useState(false)
+
   const filtered = activeFilter === 'All'
     ? projects
     : FILTERS.find(f => f.key === activeFilter)?.type === 'status'
@@ -53,6 +57,37 @@ export default function Projects() {
   const prev = useCallback(() => goTo(current - 1, 'prev'), [current, goTo])
 
   useEffect(() => { setCurrent(0) }, [activeFilter])
+
+  // Check scroll arrows visibility
+  const checkScrollArrows = useCallback(() => {
+    const el = filtersScrollRef.current
+    if (!el) return
+    setShowLeftArrow(el.scrollLeft > 4)
+    setShowRightArrow(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }, [])
+
+  // Scroll filter strip left/right by arrow click
+  const scrollFilters = (dir) => {
+    const el = filtersScrollRef.current
+    if (!el) return
+    el.scrollBy({ left: dir === 'left' ? -140 : 140, behavior: 'smooth' })
+  }
+
+  // Init scroll arrows & listen to scroll
+  useEffect(() => {
+    const el = filtersScrollRef.current
+    if (!el) return
+    checkScrollArrows()
+    el.addEventListener('scroll', checkScrollArrows, { passive: true })
+    window.addEventListener('resize', checkScrollArrows)
+    return () => {
+      el.removeEventListener('scroll', checkScrollArrows)
+      window.removeEventListener('resize', checkScrollArrows)
+    }
+  }, [checkScrollArrows])
+
+  // Re-check arrows when filter changes (content may shift)
+  useEffect(() => { checkScrollArrows() }, [activeFilter, checkScrollArrows])
 
   // Scroll active filter tab into view horizontally (no page scroll)
   useEffect(() => {
@@ -98,17 +133,43 @@ export default function Projects() {
           <p className="section-sub">From completed enterprise rollouts to exciting upcoming builds — here's what we've been working on.</p>
         </div>
 
-        {/* Filter tabs */}
-        <div className="proj-filters">
-          {FILTERS.map(f => (
-            <button
-              key={f.key}
-              className={`proj-filter-btn ${activeFilter === f.key ? 'active' : ''} ${f.type ? `filter-${f.type}` : ''}`}
-              onClick={() => setActiveFilter(f.key)}
-            >
-              {f.label}
-            </button>
-          ))}
+        {/* Filter tabs with scroll arrows */}
+        <div className="proj-filters-wrapper">
+          {/* Left arrow */}
+          <button
+            className={`proj-filter-arrow proj-filter-arrow-left ${showLeftArrow ? 'visible' : ''}`}
+            onClick={() => scrollFilters('left')}
+            aria-label="Scroll filters left"
+            tabIndex={showLeftArrow ? 0 : -1}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+
+          <div className="proj-filters" ref={filtersScrollRef}>
+            {FILTERS.map(f => (
+              <button
+                key={f.key}
+                className={`proj-filter-btn ${activeFilter === f.key ? 'active' : ''} ${f.type ? `filter-${f.type}` : ''}`}
+                onClick={() => setActiveFilter(f.key)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Right arrow */}
+          <button
+            className={`proj-filter-arrow proj-filter-arrow-right ${showRightArrow ? 'visible' : ''}`}
+            onClick={() => scrollFilters('right')}
+            aria-label="Scroll filters right"
+            tabIndex={showRightArrow ? 0 : -1}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
         </div>
 
         {/* Slider */}

@@ -1,16 +1,60 @@
 .projects-section { background: var(--bg); }
 
+/* ── Filter tabs wrapper (holds scroll arrows + strip) ── */
+.proj-filters-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;   /* vertically center arrows with tab strip */
+  margin-bottom: 44px;
+}
+
+/* Scroll arrow buttons — hidden on desktop, flex on mobile */
+.proj-filter-arrow {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;          /* fixed height — same as a tab pill */
+  border-radius: 50%;    /* circular button */
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s;
+  z-index: 2;
+  padding: 0;
+  box-shadow: var(--shadow);
+  /* keep arrows outside the scrollable strip, not stretched */
+  align-self: center;
+}
+.proj-filter-arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.proj-filter-arrow:hover {
+  color: var(--primary);
+  background: var(--bg3);
+  box-shadow: 0 2px 8px var(--primary-glow);
+}
+.proj-filter-arrow-left  { margin-right: 6px; }
+.proj-filter-arrow-right { margin-left: 6px; }
+
 /* ── Filter tabs ── */
 .proj-filters {
+  flex: 1;
   display: flex;
-  flex-wrap: nowrap;              /* never wrap — single row always */
-  width: max-content;             /* shrink to content so scroll works */
-  min-width: 100%;                /* but fill full width on desktop */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   border-bottom: 2px solid var(--border);
   padding: 0 2px;
   justify-content: center;
-  margin-bottom: 44px;
 }
+.proj-filters::-webkit-scrollbar { display: none; }
 
 .proj-filter-btn {
   position: relative;
@@ -59,8 +103,15 @@
 [data-theme="dark"] .proj-filter-btn:hover,
 [data-theme="dark"] .proj-filter-btn.active { color: var(--primary); }
 
-/* Mobile — smaller text, active tab auto-scrolled into view via JS if needed */
-@media (max-width: 600px) {
+/* Mobile — show arrows, left-align tabs, smaller text */
+@media (max-width: 768px) {
+  .proj-filter-arrow {
+    display: flex;   /* show on mobile */
+  }
+  .proj-filters {
+    justify-content: flex-start;
+    padding: 0 4px;
+  }
   .proj-filter-btn { font-size: 12px; padding: 8px 14px 10px; }
 }
 
@@ -383,5 +434,4 @@
   .proj-arrow { width: 34px; height: 34px; }
   .proj-thumb { width: 68px; height: 48px; }
   .proj-filter-btn { font-size: 12px; padding: 8px 12px 10px; }
-  .proj-more-dropdown { min-width: 160px; }
 }
