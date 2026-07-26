@@ -1,6 +1,6 @@
 export default function LogoIcon({ size = 44 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={size} height={size} viewBox="0 0 44 44" fill="none" xmlns="www.linkedin.com/in/dyotacloud">
       <defs>
         <linearGradient id="lg1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#00c6ff"/>

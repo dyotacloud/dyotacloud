@@ -27,7 +27,7 @@ export const organizationSchema = {
     addressCountry: 'IN',
   },
   sameAs: [
-    'https://www.linkedin.com/company/dyota-cloud',
+    'www.linkedin.com/in/dyotacloud',
     'https://twitter.com/dyotacloud',
     'https://www.facebook.com/dyotacloud',
     'https://www.instagram.com/dyotacloud',

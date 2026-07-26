@@ -158,3 +158,18 @@ Full restored links array:
   { "label": "Contact",    "href": "#contact" }
 
 ================================================================
+
+
+this is for footer legal 
+add this in side siteCOntent.json after "Company": [
+        "About Us"
+      ]
+      
+
+,
+      "Legal": [
+        "Privacy Policy",
+        "Terms of Service",
+        "Cookie Policy",
+        "GDPR"
+      ]
