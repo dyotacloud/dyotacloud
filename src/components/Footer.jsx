@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="footer-socials">
             {/* {[Linkedin, Twitter, Github, Youtube, Instagram].map((Icon, i) => ( */}
               {[Linkedin].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social"><Icon size={15} /></a>
+              <a key={i} href="https://www.linkedin.com/in/dyotacloud/" target='_blank' aria-label="social"><Icon size={15} /></a>
             ))}
           </div>
           <div className="footer-badges">

@@ -8,7 +8,8 @@
   padding-top:15px ;
 }
 .footer-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60%; height: 1px; background: linear-gradient(90deg, transparent, #00A1E0, transparent); }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; padding: 68px 24px 52px; }
+/* .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; padding: 68px 24px 52px; } */
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding: 68px 24px 52px; }
 .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 14px; }
 .footer-logo strong { color: #7dd3fc; font-weight: 900; }
 .footer-logo .logo-img { width: 52px; height: 52px; object-fit: contain; }
