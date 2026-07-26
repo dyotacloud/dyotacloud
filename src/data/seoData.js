@@ -16,7 +16,7 @@ export const organizationSchema = {
   image: OG_IMAGE,
   description: 'Certified Salesforce Consulting Partner in India delivering Salesforce, cloud, DevOps & AI/ML solutions.',
   foundingDate: '2025',
-  email: 'hello@dyotacloud.com',
+  email: 'info@dyotacloud.com',
   telephone: '+17864054800',
   address: {
     '@type': 'PostalAddress',
@@ -49,13 +49,13 @@ export const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: `${SITE_URL}/` },
-    { '@type': 'ListItem', position: 2, name: 'About',    item: `${SITE_URL}/#about` },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+    { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/#about` },
     { '@type': 'ListItem', position: 3, name: 'Services', item: `${SITE_URL}/#services` },
     { '@type': 'ListItem', position: 4, name: 'Projects', item: `${SITE_URL}/#projects` },
-    { '@type': 'ListItem', position: 5, name: 'Blog',     item: `${SITE_URL}/#blog` },
-    { '@type': 'ListItem', position: 6, name: 'Careers',  item: `${SITE_URL}/#careers` },
-    { '@type': 'ListItem', position: 7, name: 'Contact',  item: `${SITE_URL}/#contact` },
+    { '@type': 'ListItem', position: 5, name: 'Blog', item: `${SITE_URL}/#blog` },
+    { '@type': 'ListItem', position: 6, name: 'Careers', item: `${SITE_URL}/#careers` },
+    { '@type': 'ListItem', position: 7, name: 'Contact', item: `${SITE_URL}/#contact` },
   ],
 }
 
