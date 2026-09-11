@@ -768,7 +768,51 @@
       ],
       "image": "/jbs.png",
       "color": "#16a34a",
-      "result": "Live production website — theuniquehomeservices.com",
+      "result": "Live production website — jbswecarry.com",
+      "viewText": "View Live Site"
+    },
+    {
+      "id": 8,
+      "title": "Telangana Citizen Voice",
+      "client": "Telangana Citizen Voice",
+      "category": "Web Development",
+      "status": "completed",
+      "year": "2026",
+      "url": "https://telanganacitizenvoice.in/",
+      "desc": "Full-stack civic engagement and public service grievance platform built with React and Node.js. Features secure anonymous reporting, live case tracking, interactive public analytics dashboard, official directories, and transparent citizen-centred issue resolution.",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "REST API",
+        "Analytics Dashboard",
+        "Responsive Design"
+      ],
+      "image": "/telanganacitizenvoice.png",
+      "color": "#0284c7",
+      "result": "Live civic platform — telanganacitizenvoice.in",
+      "viewText": "View Live Site"
+    },
+    {
+      "id": 9,
+      "title": "DyotaMart",
+      "client": "DyotaMart",
+      "category": "Web Development",
+      "status": "completed",
+      "year": "2026",
+      "url": "http://euf1qe25phe5lzcbbqjsxan8.88.222.213.192.sslip.io/",
+      "desc": "Full-stack food ordering and delivery marketplace platform built with React, Node.js, and Express. Features restaurant and cuisine discovery, live promo coupon system, real-time cart and checkout, multi-currency support, dark/light theme, and responsive design.",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "REST API",
+        "Cart & Checkout",
+        "Responsive Design"
+      ],
+      "image": "/dyotamart.png",
+      "color": "#ea580c",
+      "result": "Live food & delivery marketplace platform",
       "viewText": "View Live Site"
     },
     {
